@@ -4,7 +4,10 @@ import { AppDispatch } from "../Store";
 interface ButtonProps {
   dispatch: AppDispatch;
   reset: ActionCreatorWithPayload<number, "counter/reset">;
+  payload: number;
 }
-export default function ResetButton({ dispatch, reset }: ButtonProps) {
-  return <button onClick={() => dispatch(reset(4))}>Reset</button>;
+export default function ResetButton({ dispatch, reset, payload }: ButtonProps) {
+  return (
+    <button onClick={() => dispatch(reset(payload))}>Reset to {payload}</button>
+  );
 }
