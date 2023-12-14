@@ -1,10 +1,11 @@
 import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
 import "./index.css";
-import ContextProvider from "./Context.tsx";
+import { Provider } from "react-redux";
+import { store } from "./Store.tsx";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
-  <ContextProvider>
+  <Provider store={store}>
     <App />
-  </ContextProvider>,
+  </Provider>,
 );

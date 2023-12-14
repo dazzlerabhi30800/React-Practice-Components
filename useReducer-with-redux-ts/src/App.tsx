@@ -1,13 +1,22 @@
 import "./App.css";
-import { useStateReducer } from "./Context";
+import {
+  increment,
+  decrement,
+  reset,
+  useAppDispatch,
+  useAppSelector,
+} from "./Store";
+import ResetButton from "./components/Reset";
 
 function App() {
-  const { count, dispatch } = useStateReducer();
+  const count = useAppSelector((state) => state.count);
+  const dispatch = useAppDispatch();
   return (
     <>
-      <button onClick={() => dispatch({ type: "SUB" })}>-</button>
+      <button onClick={() => dispatch(decrement())}>-</button>
       <h1>{count}</h1>
-      <button onClick={() => dispatch({ type: "ADD" })}>+</button>
+      <button onClick={() => dispatch(increment())}>+</button>
+      <ResetButton reset={reset} dispatch={dispatch} />
     </>
   );
 }
