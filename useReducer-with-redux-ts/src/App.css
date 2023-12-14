@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  background: #121212;
+  color: #fff;
+  min-height: 100vh;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  align-items: center;
+}
+
+button {
+  border: 2px dotted red;
+  background: none;
+  font-size: 1.2rem;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 5px;
+}
+
+@media (hover: hover) {
+  button {
+    cursor: pointer;
+    transition: 0.3s linear;
+  }
+  button:hover {
+    border-color: cyan;
+  }
+}
